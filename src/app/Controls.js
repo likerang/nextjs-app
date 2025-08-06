@@ -16,7 +16,7 @@ export function Controls() {
         <li><Link href={"/update/"+id} className="btn btn-secondary">Modify</Link></li>
         <li><button className="btn btn-danger" onClick={()=>{
           const options = {method:'DELETE'}
-          fetch('http://localhost:9999/topics/'+id, options) //두번째 인자에는 추가할 값
+          fetch(process.env.NEXT_PUBLIC_API_URL+'topics/'+id, options) //두번째 인자에는 추가할 값
           .then()
           .then(()=>{
             router.push(`/`);
